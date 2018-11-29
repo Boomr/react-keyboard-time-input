@@ -10,7 +10,7 @@ import adder from './lib/time-string-adder';
 import caret from './lib/caret';
 import validate from './lib/validate';
 
-const SILHOUETTE = '00:00:00:000 AM';
+const SILHOUETTE = '00:00:00:000 am';
 
 // isSeparator :: Char -> Bool
 const isSeparator = char => /[:\s]/.test(char);
@@ -21,7 +21,7 @@ var TimeInput = CreateReactClass({
   },
   getDefaultProps() {
     return {
-      value: '12:00 AM'
+      value: '12:00 am'
     };
   },
   propTypes: {
@@ -52,7 +52,7 @@ var TimeInput = CreateReactClass({
   },
   format(val) {
     if (isTwelveHourTime(val)) val = val.replace(/^00/, '12');
-    return val.toUpperCase();
+    return val.toLowerCase();
   },
   componentDidMount() {
     this.mounted = true;
